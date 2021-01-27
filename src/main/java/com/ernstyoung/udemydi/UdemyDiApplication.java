@@ -11,25 +11,11 @@ public class UdemyDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = SpringApplication.run(UdemyDiApplication.class, args);
 
-		I18nController i18nController = (I18nController) applicationContext.getBean("i18nController");
-		System.out.println("------ Spring Profiles");
-		System.out.println(i18nController.sayGreeting());
-
-		MyController myController = (MyController) applicationContext.getBean("myController");
-		System.out.println("------ Primary Bean dependency Injection");
-		System.out.println(myController.sayHello());
-
-		System.out.println("------ Property Based dependency Injection");
-		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) applicationContext.getBean("propertyInjectedController");
-		System.out.println(propertyInjectedController.getGreeting());
-
-		System.out.println("------ Setter Based dependency Injection");
-		SetterInjectedController setterInjectedController = (SetterInjectedController) applicationContext.getBean("setterInjectedController");
-		System.out.println(setterInjectedController.getGreeting());
-
-		System.out.println("------ Constructor Based dependency Injection");
-		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) applicationContext.getBean("constructorInjectedController");
-		System.out.println(constructorInjectedController.getGreeting());
+		MyController controller = (MyController) applicationContext.getBean("myController");
+		System.out.println(controller.sayHello());
+		System.out.println(applicationContext.getBean(PropertyInjectedController.class).getGreeting());
+		System.out.println(applicationContext.getBean(SetterInjectedController.class).getGreeting());
+		System.out.println(applicationContext.getBean(ConstructorInjectedController.class).getGreeting());
 	}
 
 }
