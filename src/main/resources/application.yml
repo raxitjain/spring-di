@@ -2,3 +2,13 @@ jms:
   username: jms_raxit1997
   password: jms_somepassword
   url: jms_someURL
+---
+spring:
+  profiles: de
+jms:
+  username: jms_raxit1997_german
+---
+spring:
+  profiles: es
+jms:
+  username: jms_raxit1997_spanish
