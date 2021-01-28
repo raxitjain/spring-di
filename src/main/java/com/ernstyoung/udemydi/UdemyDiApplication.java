@@ -17,11 +17,11 @@ public class UdemyDiApplication {
 		System.out.println(fakeDataSource.getUsername() + " " + fakeDataSource.getPassword() + " " + fakeDataSource.getUrl());
 		FakeJMSBroker fakeJMSBroker = (FakeJMSBroker) applicationContext.getBean(FakeJMSBroker.class);
 		System.out.println(fakeJMSBroker.getUsername() + " " + fakeJMSBroker.getPassword() + " " + fakeJMSBroker.getUrl());
-//		MyController controller = (MyController) applicationContext.getBean("myController");
-//		System.out.println(controller.sayHello());
-//		System.out.println(applicationContext.getBean(PropertyInjectedController.class).getGreeting());
-//		System.out.println(applicationContext.getBean(SetterInjectedController.class).getGreeting());
-//		System.out.println(applicationContext.getBean(ConstructorInjectedController.class).getGreeting());
+		MyController controller = (MyController) applicationContext.getBean("myController");
+		System.out.println(controller.sayHello());
+		System.out.println(applicationContext.getBean(PropertyInjectedController.class).getGreeting());
+		System.out.println(applicationContext.getBean(SetterInjectedController.class).getGreeting());
+		System.out.println(applicationContext.getBean(ConstructorInjectedController.class).getGreeting());
 	}
 
 }
