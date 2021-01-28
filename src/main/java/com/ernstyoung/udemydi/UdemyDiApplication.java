@@ -12,9 +12,8 @@ public class UdemyDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = SpringApplication.run(UdemyDiApplication.class, args);
 
-		FakeDataSource fakeDataSource;
-		fakeDataSource = (FakeDataSource) applicationContext.getBean(FakeDataSource.class);
-		System.out.println(fakeDataSource.getUsername() + " " + fakeDataSource.getPassword());
+		FakeDataSource fakeDataSource = (FakeDataSource) applicationContext.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUsername() + " " + fakeDataSource.getPassword() + " " + fakeDataSource.getUrl());
 //		MyController controller = (MyController) applicationContext.getBean("myController");
 //		System.out.println(controller.sayHello());
 //		System.out.println(applicationContext.getBean(PropertyInjectedController.class).getGreeting());
