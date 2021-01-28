@@ -1,0 +1,4 @@
+jms:
+  username: jms_raxit1997
+  password: jms_somepassword
+  url: jms_someURL
